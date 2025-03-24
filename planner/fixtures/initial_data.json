@@ -1,0 +1,1014 @@
+[
+  {
+    "model": "planner.phase",
+    "pk": 1,
+    "fields": {
+      "number": 1,
+      "name": "启航期",
+      "description": "这个阶段主要是熟悉考试内容，建立学习规划，开始打牢基础知识。",
+      "date_range": "4月-5月"
+    }
+  },
+  {
+    "model": "planner.phase",
+    "pk": 2,
+    "fields": {
+      "number": 2,
+      "name": "基础期",
+      "description": "这个阶段的目标是完成第一轮系统学习，构建完整的知识框架。",
+      "date_range": "6月-7月"
+    }
+  },
+  {
+    "model": "planner.phase",
+    "pk": 3,
+    "fields": {
+      "number": 3,
+      "name": "强化期",
+      "description": "这个阶段重点是全面巩固和深化知识点，开始系统的真题训练。",
+      "date_range": "8月-9月"
+    }
+  },
+  {
+    "model": "planner.phase",
+    "pk": 4,
+    "fields": {
+      "number": 4,
+      "name": "冲刺期",
+      "description": "这个阶段重点突破重难点，进行模拟实战训练，查漏补缺。",
+      "date_range": "10月"
+    }
+  },
+  {
+    "model": "planner.phase",
+    "pk": 5,
+    "fields": {
+      "number": 5,
+      "name": "提升期",
+      "description": "这个阶段重点攻克各科目题型，优化答题策略，强化薄弱环节。",
+      "date_range": "11月"
+    }
+  },
+  {
+    "model": "planner.phase",
+    "pk": 6,
+    "fields": {
+      "number": 6,
+      "name": "预备期",
+      "description": "这个阶段重点是知识回顾，调整状态，做好考前准备。",
+      "date_range": "12月"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 1,
+    "fields": {
+      "phase": 1,
+      "name": "政治"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 2,
+    "fields": {
+      "phase": 1,
+      "name": "英语"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 3,
+    "fields": {
+      "phase": 1,
+      "name": "数学"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 4,
+    "fields": {
+      "phase": 1,
+      "name": "专业课"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 5,
+    "fields": {
+      "phase": 2,
+      "name": "政治"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 6,
+    "fields": {
+      "phase": 2,
+      "name": "英语"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 7,
+    "fields": {
+      "phase": 2,
+      "name": "数学"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 8,
+    "fields": {
+      "phase": 2,
+      "name": "专业课"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 9,
+    "fields": {
+      "phase": 3,
+      "name": "政治"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 10,
+    "fields": {
+      "phase": 3,
+      "name": "英语"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 11,
+    "fields": {
+      "phase": 3,
+      "name": "数学"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 12,
+    "fields": {
+      "phase": 3,
+      "name": "专业课"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 13,
+    "fields": {
+      "phase": 4,
+      "name": "政治"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 14,
+    "fields": {
+      "phase": 4,
+      "name": "英语"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 15,
+    "fields": {
+      "phase": 4,
+      "name": "数学"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 16,
+    "fields": {
+      "phase": 4,
+      "name": "专业课"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 17,
+    "fields": {
+      "phase": 5,
+      "name": "政治"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 18,
+    "fields": {
+      "phase": 5,
+      "name": "英语"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 19,
+    "fields": {
+      "phase": 5,
+      "name": "数学"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 20,
+    "fields": {
+      "phase": 5,
+      "name": "专业课"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 21,
+    "fields": {
+      "phase": 6,
+      "name": "政治"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 22,
+    "fields": {
+      "phase": 6,
+      "name": "英语"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 23,
+    "fields": {
+      "phase": 6,
+      "name": "数学"
+    }
+  },
+  {
+    "model": "planner.subject",
+    "pk": 24,
+    "fields": {
+      "phase": 6,
+      "name": "专业课"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 1,
+    "fields": {
+      "subject": 1,
+      "description": "了解政治考试范围和形式"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 2,
+    "fields": {
+      "subject": 1,
+      "description": "搜集备考资料，选择合适教材"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 3,
+    "fields": {
+      "subject": 1,
+      "description": "预习马原基本概念"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 4,
+    "fields": {
+      "subject": 2,
+      "description": "摸底测试，确定自身水平"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 5,
+    "fields": {
+      "subject": 2,
+      "description": "制定单词背诵计划（每天30-50个）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 6,
+    "fields": {
+      "subject": 2,
+      "description": "开始基础语法复习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 7,
+    "fields": {
+      "subject": 2,
+      "description": "初步接触真题阅读"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 8,
+    "fields": {
+      "subject": 3,
+      "description": "了解数学各章节内容及分值"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 9,
+    "fields": {
+      "subject": 3,
+      "description": "开始高数基础概念学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 10,
+    "fields": {
+      "subject": 3,
+      "description": "复习极限、一元函数微分学"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 11,
+    "fields": {
+      "subject": 3,
+      "description": "掌握基本运算技巧"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 12,
+    "fields": {
+      "subject": 4,
+      "description": "查阅目标院校专业课考试大纲"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 13,
+    "fields": {
+      "subject": 4,
+      "description": "收集专业课资料和参考书目"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 14,
+    "fields": {
+      "subject": 4,
+      "description": "制定专业课学习计划"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 15,
+    "fields": {
+      "subject": 4,
+      "description": "开始专业基础知识预习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 16,
+    "fields": {
+      "subject": 5,
+      "description": "完成马原、毛中特系统学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 17,
+    "fields": {
+      "subject": 5,
+      "description": "开始史纲、思修的基础学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 18,
+    "fields": {
+      "subject": 5,
+      "description": "记忆重要概念和原理"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 19,
+    "fields": {
+      "subject": 5,
+      "description": "尝试简单选择题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 20,
+    "fields": {
+      "subject": 6,
+      "description": "坚持单词背诵（累计1500-2000个）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 21,
+    "fields": {
+      "subject": 6,
+      "description": "完成语法全面复习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 22,
+    "fields": {
+      "subject": 6,
+      "description": "开始翻译技巧和写作框架学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 23,
+    "fields": {
+      "subject": 6,
+      "description": "每周完成1-2篇阅读真题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 24,
+    "fields": {
+      "subject": 7,
+      "description": "完成高数主要章节学习（微积分、多元函数）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 25,
+    "fields": {
+      "subject": 7,
+      "description": "开始线性代数基础部分"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 26,
+    "fields": {
+      "subject": 7,
+      "description": "接触概率论初步内容"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 27,
+    "fields": {
+      "subject": 7,
+      "description": "针对基础题型进行训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 28,
+    "fields": {
+      "subject": 8,
+      "description": "完成专业课第一轮学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 29,
+    "fields": {
+      "subject": 8,
+      "description": "整理核心概念和重点内容"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 30,
+    "fields": {
+      "subject": 8,
+      "description": "尝试回答基础理论题"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 31,
+    "fields": {
+      "subject": 8,
+      "description": "收集和研究往年真题"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 32,
+    "fields": {
+      "subject": 9,
+      "description": "完成所有科目第一轮复习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 33,
+    "fields": {
+      "subject": 9,
+      "description": "深化重点难点内容理解"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 34,
+    "fields": {
+      "subject": 9,
+      "description": "开始系统做往年真题"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 35,
+    "fields": {
+      "subject": 9,
+      "description": "关注时政热点，积累材料"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 36,
+    "fields": {
+      "subject": 10,
+      "description": "完成核心词汇强化（累计3000个）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 37,
+    "fields": {
+      "subject": 10,
+      "description": "系统真题训练（近5年真题）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 38,
+    "fields": {
+      "subject": 10,
+      "description": "强化阅读和翻译技巧"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 39,
+    "fields": {
+      "subject": 10,
+      "description": "开始写作模板积累和练习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 40,
+    "fields": {
+      "subject": 11,
+      "description": "完成所有章节基础学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 41,
+    "fields": {
+      "subject": 11,
+      "description": "开始系统性做真题"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 42,
+    "fields": {
+      "subject": 11,
+      "description": "针对性强化弱点章节"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 43,
+    "fields": {
+      "subject": 11,
+      "description": "总结解题方法和技巧"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 44,
+    "fields": {
+      "subject": 12,
+      "description": "第二轮专业课深入学习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 45,
+    "fields": {
+      "subject": 12,
+      "description": "系统分析往年真题"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 46,
+    "fields": {
+      "subject": 12,
+      "description": "识别重点、难点和考点"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 47,
+    "fields": {
+      "subject": 12,
+      "description": "开始专题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 48,
+    "fields": {
+      "subject": 13,
+      "description": "强化主观题答题技巧"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 49,
+    "fields": {
+      "subject": 13,
+      "description": "密切关注时政热点分析"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 50,
+    "fields": {
+      "subject": 13,
+      "description": "进行模拟试题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 51,
+    "fields": {
+      "subject": 13,
+      "description": "整理重点知识框架"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 52,
+    "fields": {
+      "subject": 14,
+      "description": "继续真题训练（5-10年真题）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 53,
+    "fields": {
+      "subject": 14,
+      "description": "强化作文练习和修改"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 54,
+    "fields": {
+      "subject": 14,
+      "description": "做全真模拟试题"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 55,
+    "fields": {
+      "subject": 14,
+      "description": "总结解题策略和方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 56,
+    "fields": {
+      "subject": 15,
+      "description": "深入真题分析（5-10年真题）"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 57,
+    "fields": {
+      "subject": 15,
+      "description": "强化重难点题型训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 58,
+    "fields": {
+      "subject": 15,
+      "description": "完成全真模拟测试"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 59,
+    "fields": {
+      "subject": 15,
+      "description": "总结解题思路和方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 60,
+    "fields": {
+      "subject": 16,
+      "description": "全面梳理专业知识体系"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 61,
+    "fields": {
+      "subject": 16,
+      "description": "重点攻克难点内容"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 62,
+    "fields": {
+      "subject": 16,
+      "description": "进行模拟试题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 63,
+    "fields": {
+      "subject": 16,
+      "description": "总结答题技巧和方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 64,
+    "fields": {
+      "subject": 17,
+      "description": "背诵重点考点和时政热点"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 65,
+    "fields": {
+      "subject": 17,
+      "description": "强化分析题和论述题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 66,
+    "fields": {
+      "subject": 17,
+      "description": "专题突破，针对性复习"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 67,
+    "fields": {
+      "subject": 17,
+      "description": "掌握答题模板和方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 68,
+    "fields": {
+      "subject": 18,
+      "description": "完善作文素材和模板"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 69,
+    "fields": {
+      "subject": 18,
+      "description": "巩固词汇和长难句"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 70,
+    "fields": {
+      "subject": 18,
+      "description": "强化完形和新题型训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 71,
+    "fields": {
+      "subject": 18,
+      "description": "限时模拟训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 72,
+    "fields": {
+      "subject": 19,
+      "description": "强化薄弱章节和题型"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 73,
+    "fields": {
+      "subject": 19,
+      "description": "完成高频题型专题训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 74,
+    "fields": {
+      "subject": 19,
+      "description": "总结常见错误和解决方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 75,
+    "fields": {
+      "subject": 19,
+      "description": "全真模拟考试训练"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 76,
+    "fields": {
+      "subject": 20,
+      "description": "巩固核心知识点和理论"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 77,
+    "fields": {
+      "subject": 20,
+      "description": "针对性训练薄弱环节"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 78,
+    "fields": {
+      "subject": 20,
+      "description": "完善答题思路和方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 79,
+    "fields": {
+      "subject": 20,
+      "description": "全真模拟考试"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 80,
+    "fields": {
+      "subject": 21,
+      "description": "重点背诵时政热点分析"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 81,
+    "fields": {
+      "subject": 21,
+      "description": "复习核心考点和答题模板"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 82,
+    "fields": {
+      "subject": 21,
+      "description": "轻松过一遍所有知识点"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 83,
+    "fields": {
+      "subject": 21,
+      "description": "保持对最新时事的关注"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 84,
+    "fields": {
+      "subject": 22,
+      "description": "复习核心词汇和重点短语"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 85,
+    "fields": {
+      "subject": 22,
+      "description": "回顾作文模板和素材"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 86,
+    "fields": {
+      "subject": 22,
+      "description": "轻松做一些阅读和翻译"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 87,
+    "fields": {
+      "subject": 22,
+      "description": "调整心态，保持语感"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 88,
+    "fields": {
+      "subject": 23,
+      "description": "回顾重点公式和解题方法"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 89,
+    "fields": {
+      "subject": 23,
+      "description": "复习典型题型和解题思路"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 90,
+    "fields": {
+      "subject": 23,
+      "description": "保持做题手感和节奏"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 91,
+    "fields": {
+      "subject": 23,
+      "description": "调整心态，保持冷静"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 92,
+    "fields": {
+      "subject": 24,
+      "description": "回顾核心知识点和体系"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 93,
+    "fields": {
+      "subject": 24,
+      "description": "复习重点题型和答题技巧"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 94,
+    "fields": {
+      "subject": 24,
+      "description": "保持知识连贯性和活跃度"
+    }
+  },
+  {
+    "model": "planner.task",
+    "pk": 95,
+    "fields": {
+      "subject": 24,
+      "description": "调整状态，保持自信"
+    }
+  }
+] 
