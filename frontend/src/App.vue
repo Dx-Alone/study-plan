@@ -8,7 +8,7 @@
       <plan-overview v-if="activeTab === 'overview'" :phases="phases" @print="printPlan" />
 
       <phase-detail v-else :phase="getActivePhase()" :activePhaseId="activeTab" :notes="notes[activeTab]"
-        @save-note="saveNote" @post-note="postNote" @clear-note="clearNote" @clear-history="clearHistory" />
+        @save-note="saveNote" @post-note="postNote" @clear-note="clearNote" @clear-history="clearHistory" @delete-note="deleteNote" />
     </div>
 
     <footer class="footer">
@@ -179,17 +179,29 @@ export default {
     
     // 新增方法：发送笔记到服务器（作为备份）
     sendNoteToServer(phaseId, content) {
-      axios.post(`/api/phases/${phaseId}/notes/`, { content: content })
+      const phase = this.getPhaseByStringId(phaseId)
+      if (!phase) return Promise.reject('无效的阶段ID')
+      
+      return axios.post(`/api/phases/${phase.id}/notes/`, { content: content })
         .then(response => {
           console.log('Note saved to server:', response.data)
+          return response.data
         })
         .catch(error => {
           console.error('保存笔记到服务器失败 (但已保存到本地):', error)
+          throw error
         })
     },
+    
+    // 辅助方法：根据字符串ID获取相应的阶段对象
+    getPhaseByStringId(phaseId) {
+      return this.phases.find(p => p.number === parseInt(phaseId.replace('phase', '')))
+    },
+    
     clearNote(phaseId) {
       localStorage.removeItem(`${phaseId}-draft`)
     },
+    
     clearHistory(phaseId) {
       if (confirm('确定要清空所有历史笔记吗？此操作不可恢复。')) {
         // 清空本地存储
@@ -209,7 +221,7 @@ export default {
     
     // 新增方法：从服务器清除笔记
     clearServerNotes(phaseId) {
-      const phase = this.phases.find(p => p.number === parseInt(phaseId.replace('phase', '')))
+      const phase = this.getPhaseByStringId(phaseId)
       if (!phase) return
       
       // 获取该阶段所有笔记
@@ -246,7 +258,7 @@ export default {
     },
     postNote(phaseId, content) {
       // 检查phaseId是否有效
-      const phase = this.phases.find(p => p.number === parseInt(phaseId.replace('phase', '')))
+      const phase = this.getPhaseByStringId(phaseId)
       if (!phase) {
         console.error('Invalid phase ID:', phaseId)
         alert('发送笔记失败: 无效的阶段ID')
@@ -291,6 +303,102 @@ export default {
       
       // 同时发送到后端（可选，用于备份）
       this.sendNoteToServer(phaseId, content)
+    },
+    // 新增方法，用于强制刷新笔记数据
+    refreshNotes(phaseId) {
+      console.log(`强制刷新 ${phaseId} 的笔记数据`)
+      
+      try {
+        // 从localStorage重新读取笔记
+        const notesJson = localStorage.getItem(`notes-${phaseId}`)
+        const freshNotes = notesJson ? JSON.parse(notesJson) : []
+        
+        console.log(`从localStorage重新获取笔记: ${freshNotes.length}条`)
+        
+        // 更新内存中的笔记 - Vue 3响应式更新
+        this.notes[phaseId] = freshNotes
+        
+        // 确保视图更新并通知组件刷新
+        this.$nextTick(() => {
+          emitter.emit('notes-refreshed', { phaseId })
+        })
+        
+        return true
+      } catch (error) {
+        console.error('刷新笔记数据失败:', error)
+        return false
+      }
+    },
+    // 修改deleteNote方法
+    deleteNote(phaseId, noteId) {
+      console.log(`准备删除笔记: phaseId=${phaseId}, noteId=${noteId} (类型: ${typeof noteId})`)
+      
+      try {
+        const notesJson = localStorage.getItem(`notes-${phaseId}`)
+        if (!notesJson) {
+          console.error(`未找到阶段 ${phaseId} 的笔记数据`)
+          return false
+        }
+
+        let notes = JSON.parse(notesJson)
+        console.log(`找到 ${notes.length} 条笔记，准备删除ID为 ${noteId} 的笔记`)
+        
+        // 确保noteId是字符串进行比较
+        const stringNoteId = String(noteId)
+        console.log(`使用字符串ID进行比较: ${stringNoteId}`)
+        
+        // 过滤掉要删除的笔记，创建一个全新的数组
+        const filteredNotes = notes.filter(note => {
+          const noteIdStr = String(note.id);
+          const isMatch = noteIdStr === stringNoteId;
+          if (isMatch) {
+            console.log(`找到匹配的笔记: ${note.id} (${typeof note.id}) === ${stringNoteId}`);
+          }
+          return !isMatch;
+        })
+        
+        if (filteredNotes.length !== notes.length) {
+          console.log(`成功移除笔记，剩余笔记数: ${filteredNotes.length}`)
+          
+          // 更新本地存储
+          this.saveNotesToLocalStorage(phaseId, filteredNotes)
+          
+          // 确保notes对象已经初始化
+          if (!this.notes) {
+            this.notes = {}
+          }
+          
+          // 直接替换内存中的数组
+          this.notes[phaseId] = filteredNotes
+          
+          // 可选：从服务器删除笔记
+          this.deleteNoteFromServer(phaseId, noteId)
+          
+          // 发送删除成功事件
+          emitter.emit('note-deleted', { phaseId, noteId })
+          console.log(`已发送删除成功事件`)
+          
+          return true
+        } else {
+          console.error(`未找到ID为 ${noteId} 的笔记`)
+          return false
+        }
+      } catch (error) {
+        console.error('删除笔记时发生错误:', error)
+        return false
+      }
+    },
+    deleteNoteFromServer(phaseId, noteId) {
+      const phase = this.getPhaseByStringId(phaseId)
+      if (!phase) return
+      
+      axios.delete(`/api/phases/${phase.id}/notes/${noteId}/`)
+        .then(() => {
+          console.log(`笔记 ${noteId} 已从服务器删除`)
+        })
+        .catch(error => {
+          console.error('从服务器删除笔记失败 (但已从本地删除):', error)
+        })
     }
   }
 }

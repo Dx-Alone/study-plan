@@ -1,0 +1,140 @@
+/* GitHub风格主题 */
+.markdown-github {
+  line-height: 1.6;
+  text-align: left;
+  color: #24292e;
+}
+
+.markdown-github h1,
+.markdown-github h2,
+.markdown-github h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+  font-weight: 600;
+}
+
+.markdown-github h1 {
+  font-size: 2em;
+}
+
+.markdown-github h2 {
+  font-size: 1.5em;
+}
+
+.markdown-github h3 {
+  font-size: 1.25em;
+}
+
+.markdown-github p {
+  margin: 0.8em 0;
+}
+
+.markdown-github ul,
+.markdown-github ol {
+  padding-left: 2em;
+}
+
+.markdown-github code {
+  background-color: rgba(27, 31, 35, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 85%;
+}
+
+.markdown-github pre {
+  background-color: #f6f8fa;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.markdown-github pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-github blockquote {
+  border-left: 4px solid #dfe2e5;
+  padding-left: 1em;
+  margin-left: 0;
+  color: #6a737d;
+}
+
+.markdown-github table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.markdown-github table th,
+.markdown-github table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.markdown-github table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.markdown-github table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+.markdown-github hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+.markdown-github img {
+  max-width: 100%;
+  box-sizing: content-box;
+}
+
+/* 暗黑模式 */
+.dark-mode .markdown-github {
+  color: #e2e8f0;
+}
+
+.dark-mode .markdown-github h1,
+.dark-mode .markdown-github h2,
+.dark-mode .markdown-github h3 {
+  border-bottom-color: #4a5568;
+}
+
+.dark-mode .markdown-github code {
+  background-color: rgba(200, 225, 255, 0.1);
+}
+
+.dark-mode .markdown-github pre {
+  background-color: #2d3748;
+}
+
+.dark-mode .markdown-github blockquote {
+  border-left-color: #4a5568;
+  color: #a0aec0;
+}
+
+.dark-mode .markdown-github table th,
+.dark-mode .markdown-github table td {
+  border-color: #4a5568;
+}
+
+.dark-mode .markdown-github table tr {
+  background-color: #2d3748;
+  border-top-color: #4a5568;
+}
+
+.dark-mode .markdown-github table tr:nth-child(2n) {
+  background-color: #323c4b;
+}
+
+.dark-mode .markdown-github hr {
+  background-color: #4a5568;
+} 

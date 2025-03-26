@@ -1,5 +1,5 @@
 <template>
-  <div class="phase-content active" :id="activePhaseId" v-if="phase">
+  <div class="phase-content active" :id="activePhaseId" v-if="phase" :key="componentKey">
     <div class="phase-header">
       <h2>第{{ phase.number }}阶段：{{ phase.name }}</h2>
       <div class="phase-date">{{ phase.date_range }}</div>
@@ -17,14 +17,18 @@
     </div>
 
     <notes-section :phase-id="activePhaseId" :notes="notes" ref="notesSection"
-      @save-note="saveNote" @post-note="postNote"
-      @clear-note="clearNote" @clear-history="clearHistory" />
+      @save-note="(content) => $emit('save-note', activePhaseId, content)" 
+      @post-note="(content) => $emit('post-note', activePhaseId, content)"
+      @clear-note="() => $emit('clear-note', activePhaseId)" 
+      @clear-history="() => $emit('clear-history', activePhaseId)" 
+      @delete-note="(noteId) => $emit('delete-note', activePhaseId, String(noteId))" />
   </div>
 </template>
 
 <script>
 import SubjectCard from './SubjectCard.vue'
 import NotesSection from './NotesSection.vue'
+import emitter from '../utils/eventBus'
 
 export default {
   name: 'PhaseDetail',
@@ -37,14 +41,44 @@ export default {
     activePhaseId: String,
     notes: Array
   },
-  emits: ['save-note', 'post-note', 'clear-note', 'clear-history'],
+  data() {
+    return {
+      componentKey: 0 // 用于强制刷新组件
+    }
+  },
+  emits: ['save-note', 'post-note', 'clear-note', 'clear-history', 'delete-note'],
   mounted() {
     console.log(`PhaseDetail mounted for phase ${this.activePhaseId}, notes:`, this.notes)
+    
+    // 监听笔记刷新事件，强制刷新组件
+    emitter.on('notes-refreshed', this.handleNotesRefreshed)
+  },
+  unmounted() {
+    emitter.off('notes-refreshed', this.handleNotesRefreshed)
   },
   updated() {
     console.log(`PhaseDetail updated for phase ${this.activePhaseId}, notes:`, this.notes)
   },
   methods: {
+    handleNotesRefreshed({ phaseId }) {
+      if (phaseId === this.activePhaseId) {
+        console.log("笔记刷新事件触发组件刷新")
+        this.refreshComponent()
+      }
+    },
+    refreshComponent() {
+      // 递增componentKey，强制Vue重新渲染整个组件
+      this.componentKey += 1
+      console.log("组件刷新，新的key:", this.componentKey)
+      
+      // 确保组件刷新后，也触发子组件更新
+      this.$nextTick(() => {
+        if (this.$refs.notesSection) {
+          console.log("强制更新NotesSection组件")
+          this.$refs.notesSection.$forceUpdate()
+        }
+      })
+    },
     getTipContent() {
       // 根据不同阶段返回不同的提示内容
       const tips = {
@@ -56,18 +90,6 @@ export default {
         phase6: '准备考试用品（准考证、身份证、文具等），熟悉考场位置和交通路线，调整作息，保证充足睡眠，保持积极心态，相信自己的努力。'
       }
       return tips[this.activePhaseId] || ''
-    },
-    saveNote(content) {
-      this.$emit('save-note', this.activePhaseId, content)
-    },
-    postNote(content) {
-      this.$emit('post-note', this.activePhaseId, content)
-    },
-    clearNote() {
-      this.$emit('clear-note', this.activePhaseId)
-    },
-    clearHistory() {
-      this.$emit('clear-history', this.activePhaseId)
     }
   }
 }

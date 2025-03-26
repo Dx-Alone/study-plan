@@ -1,0 +1,176 @@
+/* 学术论文风格主题 */
+.markdown-academic {
+  line-height: 1.6;
+  text-align: left;
+  color: #333;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.markdown-academic h1,
+.markdown-academic h2,
+.markdown-academic h3 {
+  font-weight: normal;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.markdown-academic h1 {
+  font-size: 2.2em;
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 0.5em;
+}
+
+.markdown-academic h2 {
+  font-size: 1.8em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3em;
+}
+
+.markdown-academic h3 {
+  font-size: 1.4em;
+  font-style: italic;
+}
+
+.markdown-academic p {
+  margin: 1em 0;
+  text-align: justify;
+  line-height: 1.8;
+}
+
+.markdown-academic ul,
+.markdown-academic ol {
+  padding-left: 1.8em;
+  margin: 1em 0;
+}
+
+.markdown-academic code {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f5f5f5;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+.markdown-academic pre {
+  background-color: #f5f5f5;
+  padding: 1em;
+  border-radius: 3px;
+  overflow-x: auto;
+  border: 1px solid #ddd;
+}
+
+.markdown-academic pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+.markdown-academic blockquote {
+  margin-left: 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid #ddd;
+  background-color: #f9f9f9;
+  font-style: italic;
+  color: #555;
+}
+
+.markdown-academic a {
+  color: #0366d6;
+  text-decoration: underline;
+}
+
+.markdown-academic table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2em 0;
+  font-size: 0.9em;
+}
+
+.markdown-academic table th {
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.markdown-academic table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.markdown-academic hr {
+  height: 1px;
+  margin: 2em 0;
+  border: none;
+  background-color: #ddd;
+}
+
+.markdown-academic img {
+  max-width: 100%;
+  display: block;
+  margin: 2em auto;
+}
+
+.markdown-academic em {
+  font-style: italic;
+}
+
+.markdown-academic strong {
+  font-weight: bold;
+}
+
+/* 学术风格引用标注 */
+.markdown-academic .citation {
+  vertical-align: super;
+  font-size: 0.75em;
+  color: #0366d6;
+}
+
+/* 暗黑模式 */
+.dark-mode .markdown-academic {
+  color: #e2e8f0;
+}
+
+.dark-mode .markdown-academic h1 {
+  border-bottom-color: #e2e8f0;
+}
+
+.dark-mode .markdown-academic h2 {
+  border-bottom-color: #4a5568;
+}
+
+.dark-mode .markdown-academic code {
+  background-color: #2d3748;
+}
+
+.dark-mode .markdown-academic pre {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+.dark-mode .markdown-academic blockquote {
+  border-left-color: #4a5568;
+  background-color: #2d3748;
+  color: #a0aec0;
+}
+
+.dark-mode .markdown-academic a {
+  color: #4cc1ff;
+}
+
+.dark-mode .markdown-academic table th {
+  background-color: #2d3748;
+  border-color: #4a5568;
+}
+
+.dark-mode .markdown-academic table td {
+  border-color: #4a5568;
+}
+
+.dark-mode .markdown-academic hr {
+  background-color: #4a5568;
+}
+
+.dark-mode .markdown-academic .citation {
+  color: #4cc1ff;
+} 
